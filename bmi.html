@@ -1,0 +1,85 @@
+
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <title>BMI Calculator</title>
+        <script>
+            function calcbmi(bmi1){
+
+                
+            }
+            function calculateBMI() {
+                
+                var weight = parseFloat(document.getElementById("weight").value);
+                var height = parseFloat(document.getElementById("height").value);
+    
+                
+                if (isNaN(weight) || isNaN(height) || weight <= 0 || height <= 0) {
+                    alert("Please enter valid weight and height.");
+                    return;
+                }
+    
+                
+                var bmi = weight / Math.pow(height, 2);
+    
+            
+                let tex;
+                if(bmi<18.5){
+                    tex = "You are Underweight!!";
+
+                }
+                else if(bmi>18.5 && bmi<24.9){
+                    tex = "You are Normal!!";
+                }
+                else if(bmi>25 && bmi<29.9){
+                    tex="Your are Overweight!!";
+                }
+                else{
+                    tex="Obesity!!";
+                }
+                
+                document.getElementById("result").innerHTML = "Your BMI is: " + bmi.toFixed(2);
+                document.getElementsById("cate").innerHTML = tex+"okay?";
+            }
+        </script>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body class="bgg">
+        <div class="header">
+            <a href="#default" class="logo">Dietary Regimen</a>
+            <div class="header-right">
+              <a class="active" href="C:\Users\ADITYA\OneDrive\Desktop\webpage\main.html">Home</a>
+              <a href="C:\Users\ADITYA\OneDrive\Desktop\webpage\veg.html">veg</a>
+              <a href="#">Non Veg</a>
+              <a href="C:\Users\ADITYA\OneDrive\Desktop\webpage\calorimter.html">Calorimetry</a>
+              <a href="C:\Users\ADITYA\OneDrive\Desktop\webpage\about.html">About</a>
+            </div>
+          </div>
+        <h1 style="text-align:center;">BMI Calculator</h1>
+        <p style="text-align:center;">Enter your weight (in kilograms) and height (in meters) to calculate your BMI:</p>
+    
+        <form style="text-align:center;">
+            <label for="weight">Weight (in kg):</label>
+            <input type="text" id="weight" name="weight" placeholder="Enter weight" required><br><br>
+    
+            <label for="height">Height (in m):</label>
+            <input type="text" id="height" name="height" placeholder="Enter height" required><br><br>
+    
+            <button type="button" onclick="calculateBMI()">Calculate BMI</button>
+        </form>
+    
+        <p id="result" style="text-align:center;"></p>
+        <p id="cate" style="text-align:center;"></p>
+ 
+        <h2>
+        <b>BMI Categories</b></h2>
+        <ol >
+
+<li>Underweight = <18.5</li>
+<li>Normal weight = 18.5–24.9</li>
+<li>Overweight = 25–29.9</li>
+<li>Obesity = BMI of 30 or greater</li>
+        </ol>
+    </body>
+    </html>
+    
